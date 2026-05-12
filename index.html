@@ -1,40 +1,79 @@
 <!doctype html>
-<html lang="en">
+<html lang="uz">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
   </head>
   <body>
-    <div>
-      <!-- password content -->
-      <div>
-        <span id="passwordContent">Password</span>
-        <button id="copyButton">Copy</button>
-      </div>
-
-      <div>
-        <span>
-          <p>Character length</p>
-          <span id="characterLength">4</span>
-        </span>
-
-        <input id="rangeInput" type="range" min="4" max="20" />
-
-        <div>
-          <input id="upperInput" type="checkbox" />
-          <label for="">Include Uppercase Letters</label><br />
-          <input id="lowerInput" type="checkbox" />
-          <label for="">Include Lowercase Letters</label><br />
-          <input id="numberInput" type="checkbox" />
-          <label for="">Include Numbers</label><br />
-          <input id="symbolInput" type="checkbox" />
-          <label for="">Include Symbols</label><br />
+    <div class="pg-wrap">
+      <p class="pg-title">Password Generator</p>
+      <div class="pg-card">
+        <div class="pg-password-box">
+          <span id="passwordContent">PTx1f5DaFX</span>
+          <div style="position: relative">
+            <button id="copyButton" aria-label="Copy password">
+              <i class="ti ti-copy" style="font-size: 18px"></i>
+            </button>
+            <div class="copied-toast" id="copiedToast">COPIED!</div>
+          </div>
         </div>
 
-        <button id="generateButton">GENERATE</button>
+        <div class="pg-length-row">
+          <span class="pg-length-label">Character Length</span>
+          <span id="characterLength">10</span>
+        </div>
+        <input
+          id="rangeInput"
+          type="range"
+          min="4"
+          max="20"
+          value="10"
+          step="1"
+        />
+
+        <div class="pg-checks">
+          <div class="pg-check-row">
+            <input id="upperInput" type="checkbox" checked />
+            <label for="upperInput">Include Uppercase Letters</label>
+          </div>
+          <div class="pg-check-row">
+            <input id="lowerInput" type="checkbox" checked />
+            <label for="lowerInput">Include Lowercase Letters</label>
+          </div>
+          <div class="pg-check-row">
+            <input id="numberInput" type="checkbox" checked />
+            <label for="numberInput">Include Numbers</label>
+          </div>
+          <div class="pg-check-row">
+            <input id="symbolInput" type="checkbox" />
+            <label for="symbolInput">Include Symbols</label>
+          </div>
+        </div>
+
+        <div class="pg-strength-row">
+          <span class="pg-strength-label">STRENGTH</span>
+          <div class="pg-strength-right">
+            <span id="strengthText">MEDIUM</span>
+            <div class="pg-bars" id="strengthBars">
+              <div class="pg-bar" style="height: 12px"></div>
+              <div class="pg-bar" style="height: 16px"></div>
+              <div class="pg-bar" style="height: 20px"></div>
+              <div class="pg-bar" style="height: 24px"></div>
+            </div>
+          </div>
+        </div>
+
+        <button id="generateButton">
+          GENERATE <i class="ti ti-arrow-right" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
-    <script src="./js/app.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>

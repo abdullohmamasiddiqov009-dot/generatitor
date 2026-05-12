@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #0f1410;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Courier New", monospace;
+}
+.pg-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.pg-title {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #7a8a7a;
+  margin-bottom: 1.2rem;
+}
+.pg-card {
+  background: #1a1f1a;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #2a3a2a;
+}
+.pg-password-box {
+  background: #111611;
+  border: 1px solid #2a3a2a;
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+#passwordContent {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e8f0e8;
+  letter-spacing: 1.5px;
+  word-break: break-all;
+}
+#copyButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #5cd65c;
+  font-size: 18px;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+#copyButton:hover {
+  color: #88ee88;
+}
+.pg-length-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.pg-length-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #7a8a7a;
+}
+#characterLength {
+  font-size: 18px;
+  font-weight: bold;
+  color: #5cd65c;
+}
+#rangeInput {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    #5cd65c var(--pct, 40%),
+    #2a3a2a var(--pct, 40%)
+  );
+  border-radius: 2px;
+  outline: none;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+}
+#rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #e8f0e8;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+#rangeInput::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #e8f0e8;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+.pg-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1.3rem;
+}
+.pg-check-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pg-check-row input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #5cd65c;
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+.pg-check-row input[type="checkbox"]:checked {
+  background: #5cd65c;
+}
+.pg-check-row input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #111611;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+.pg-check-row label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #b0c0b0;
+  cursor: pointer;
+}
+.pg-strength-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+  border: 1px solid #2a3a2a;
+  border-radius: 4px;
+  margin-bottom: 1.2rem;
+}
+.pg-strength-label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #5a6a5a;
+}
+.pg-strength-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#strengthText {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #e8f0e8;
+}
+.pg-bars {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+}
+.pg-bar {
+  width: 8px;
+  background: #2a3a2a;
+  border: 1px solid #3a4a3a;
+}
+.pg-bar.active {
+  border-color: #5cd65c;
+  background: #5cd65c;
+}
+.pg-bar.warn.active {
+  border-color: #e8c442;
+  background: #e8c442;
+}
+.pg-bar.danger.active {
+  border-color: #e85c42;
+  background: #e85c42;
+}
+#generateButton {
+  width: 100%;
+  padding: 0.85rem;
+  background: #5cd65c;
+  border: none;
+  border-radius: 6px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #111611;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+#generateButton:hover {
+  background: #88ee88;
+}
+#generateButton:active {
+  transform: scale(0.98);
+}
+.copied-toast {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  background: #5cd65c;
+  color: #111611;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.copied-toast.show {
+  opacity: 1;
+}
